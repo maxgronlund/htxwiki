@@ -6502,3 +6502,149 @@ Rendered shared/_navigation.html.erb (2.7ms)
 Rendered shared/_footer.html.erb (0.2ms)
 Rendered gibbon_lists_members/index.html.erb within layouts/application (10.2ms)
 Completed 200 OK in 804ms (Views: 15.5ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /Users/synthmax/Dropbox/htxwiki/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /Users/synthmax/Dropbox/htxwiki/config/environment.rb:5)
+
+
+Started GET "/?locale=dk" for 127.0.0.1 at 2011-04-17 20:16:06 +0200
+
+Mysql::BadDbError (Unknown database 'htxwiki_development'):
+  
+
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.2ms)
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /Users/synthmax/Dropbox/htxwiki/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /Users/synthmax/Dropbox/htxwiki/config/environment.rb:5)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (97.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW KEYS FROM `schema_migrations`[0m
+  [1m[35mSQL (255.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to CreatePages (20101130091642)
+  [1m[35mSQL (92.2ms)[0m  CREATE TABLE `pages` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101130091642')[0m
+Migrating to DeviseCreateUsers (20101210122355)
+  [1m[35mSQL (154.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(128) DEFAULT '' NOT NULL, `password_salt` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `remember_token` varchar(255), `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (175.2ms)[0m  CREATE UNIQUE INDEX `index_users_on_email` ON `users` (`email`)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `users`[0m
+  [1m[35mSQL (132.1ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token` ON `users` (`reset_password_token`)
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101210122355')[0m
+Migrating to AddRoleToUsers (20101210122646)
+  [1m[35mSQL (127.4ms)[0m  ALTER TABLE `users` ADD `role` varchar(255)
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101210122646')[0m
+Migrating to CreateIllustrations (20101212080325)
+  [1m[35mSQL (147.0ms)[0m  CREATE TABLE `illustrations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101212080325')[0m
+Migrating to AddAttachmentImageToIllustration (20101212080423)
+  [1m[35mSQL (123.6ms)[0m  ALTER TABLE `illustrations` ADD `image_file_name` varchar(255)
+  [1m[36mSQL (132.1ms)[0m  [1mALTER TABLE `illustrations` ADD `image_content_type` varchar(255)[0m
+  [1m[35mSQL (91.8ms)[0m  ALTER TABLE `illustrations` ADD `image_file_size` int(11)
+  [1m[36mSQL (105.7ms)[0m  [1mALTER TABLE `illustrations` ADD `image_updated_at` datetime[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101212080423')
+Migrating to AddNameToUser (20101214002148)
+  [1m[36mSQL (118.3ms)[0m  [1mALTER TABLE `users` ADD `name` varchar(255)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101214002148')
+Migrating to AddHeaderToPage (20101216120541)
+  [1m[36mSQL (146.3ms)[0m  [1mALTER TABLE `pages` ADD `header` varchar(255)[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101216120541')
+Migrating to AddLableToPage (20101223175838)
+  [1m[36mSQL (130.3ms)[0m  [1mALTER TABLE `pages` DROP `header`[0m
+  [1m[35mSQL (123.8ms)[0m  ALTER TABLE `pages` ADD `identity` varchar(255)
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101223175838')[0m
+Migrating to CreateComments (20101226223033)
+  [1m[35mSQL (102.7ms)[0m  CREATE TABLE `comments` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `user_id` int(11), `commentable_id` int(11), `commentable_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101226223033')[0m
+Migrating to CreateBlogs (20101226230641)
+  [1m[35mSQL (138.3ms)[0m  CREATE TABLE `blogs` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255), `body` text, `user_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20101226230641')[0m
+Migrating to AddAttachmentImageToUser (20101227203942)
+  [1m[35mSQL (175.4ms)[0m  ALTER TABLE `users` ADD `image_file_name` varchar(255)
+  [1m[36mSQL (180.1ms)[0m  [1mALTER TABLE `users` ADD `image_content_type` varchar(255)[0m
+  [1m[35mSQL (83.1ms)[0m  ALTER TABLE `users` ADD `image_file_size` int(11)
+  [1m[36mSQL (83.3ms)[0m  [1mALTER TABLE `users` ADD `image_updated_at` datetime[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20101227203942')
+Migrating to AddLanguageToUser (20110110141411)
+  [1m[36mSQL (123.3ms)[0m  [1mALTER TABLE `users` ADD `language` varchar(255)[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20110110141411')
+Migrating to AddLanguageToPage (20110110171914)
+  [1m[36mSQL (145.7ms)[0m  [1mALTER TABLE `pages` ADD `language` varchar(255)[0m
+  [1m[35mSQL (149.4ms)[0m  ALTER TABLE `blogs` ADD `language` varchar(255)
+  [1m[36mSQL (99.5ms)[0m  [1mALTER TABLE `comments` ADD `language` varchar(255)[0m
+  [1m[35mSQL (101.1ms)[0m  ALTER TABLE `illustrations` ADD `language` varchar(255)
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110110171914')[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mdescribe `blogs`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW KEYS FROM `blogs`
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `comments`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW KEYS FROM `comments`
+  [1m[36mSQL (1.5ms)[0m  [1mdescribe `illustrations`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `illustrations`
+  [1m[36mSQL (1.4ms)[0m  [1mdescribe `pages`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `pages`
+  [1m[36mSQL (2.0ms)[0m  [1mdescribe `users`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW KEYS FROM `users`
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /Users/synthmax/Dropbox/htxwiki/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /Users/synthmax/Dropbox/htxwiki/config/environment.rb:5)
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+  [1m[35mIllustration Load (0.9ms)[0m  SELECT `illustrations`.* FROM `illustrations` WHERE (`illustrations`.`title` = 'logo') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  describe `illustrations`
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO `illustrations` (`title`, `created_at`, `updated_at`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `language`) VALUES ('logo', '2011-04-17 18:16:48', '2011-04-17 18:16:48', NULL, NULL, NULL, NULL, NULL)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.6ms)[0m  COMMIT
+  [1m[36mSQL (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('max@synthmax.dk')) LIMIT 1
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `password_salt`, `reset_password_token`, `remember_token`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`, `role`, `name`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `language`) VALUES ('max@synthmax.dk', '$2a$10$iznLIM2AaadNC4271T77PupJQcL1JQuVhun5vfPoORB5YS6dsEC/y', '$2a$10$iznLIM2AaadNC4271T77Pu', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-04-17 18:16:48', '2011-04-17 18:16:48', 'super', 'Max', NULL, NULL, NULL, NULL, 'dk')
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.7ms)[0m  describe `pages`
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO `pages` (`title`, `body`, `created_at`, `updated_at`, `identity`, `language`) VALUES ('Velkommen', 'formålet med denne side kan beskrives her', '2011-04-17 18:16:48', '2011-04-17 18:16:48', 'welcome_dk', 'dk')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `pages` (`title`, `body`, `created_at`, `updated_at`, `identity`, `language`) VALUES ('Welcome', 'The purpose of this site can be explained here', '2011-04-17 18:16:48', '2011-04-17 18:16:48', 'welcome_en', 'en')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO `pages` (`title`, `body`, `created_at`, `updated_at`, `identity`, `language`) VALUES ('Om denne side', 'En forklaring af, sidens forfattere, formål e.t.c.', '2011-04-17 18:16:48', '2011-04-17 18:16:48', 'about_dk', 'dk')[0m
+  [1m[35mSQL (0.4ms)[0m  COMMIT
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO `pages` (`title`, `body`, `created_at`, `updated_at`, `identity`, `language`) VALUES ('About this site', 'An explanation of the site. The authors. and the values', '2011-04-17 18:16:48', '2011-04-17 18:16:48', 'about_en', 'en')
+  [1m[36mSQL (0.3ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: Use toplevel init.rb; rails/init.rb is deprecated: /Users/synthmax/Dropbox/htxwiki/vendor/plugins/paperclip/rails/init.rb. (called from <top (required)> at /Users/synthmax/Dropbox/htxwiki/config/environment.rb:5)
+
+
+Started GET "/?locale=dk" for 127.0.0.1 at 2011-04-17 20:18:55 +0200
+  Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"dk"}
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mIllustration Load (0.6ms)[0m  [1mSELECT `illustrations`.* FROM `illustrations` WHERE (`illustrations`.`title` = 'logo') LIMIT 1[0m
+  [1m[35mPage Load (0.6ms)[0m  SELECT `pages`.* FROM `pages` WHERE (`pages`.`identity` = 'welcome_dk ') LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___2588567156003060671_2171705040_1973083198017345866 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (3.3ms)
+Rendered shared/_footer.html.erb (0.3ms)
+Rendered home/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 121ms (Views: 26.9ms | ActiveRecord: 2.5ms | Sphinx: 0.0ms)
+
+
+Started GET "/images/fallback/default_illustration_original.gif" for 127.0.0.1 at 2011-04-17 20:18:55 +0200
+
+ActionController::RoutingError (No route matches "/images/fallback/default_illustration_original.gif"):
+  
+
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/images/fallback/default_illustration_original.gif" for 127.0.0.1 at 2011-04-17 20:18:55 +0200
+
+ActionController::RoutingError (No route matches "/images/fallback/default_illustration_original.gif"):
+  
+
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
