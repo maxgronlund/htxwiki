@@ -1,0 +1,49 @@
+<div class="grid_12">
+	<%= form_for(@casestorry, :html => { :multipart => true },:html => { :id => 'upload_form' }) do |f| %>
+		<% if @casestorry.errors.any? %>
+			<div id="error_explanation">
+				<h2><%= pluralize(@casestorry.errors.count, "error") %> prohibited this casestorry from being saved:</h2>
+				
+				<ul>
+				<% @casestorry.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+				</ul>
+			</div>
+		<% end %>
+		
+		<div class="field">
+			<p><%= t('illustration.title')%><br/>
+				<%= f.text_field :title %>
+			</p>
+		</div>
+		
+		<div class="field">
+		    <%= f.label :body %><br />
+		    <%= f.text_area :body %>
+		</div>
+		
+		<div class="field">
+		  <%= f.label :category %><br />
+		  <%= f.text_field :category %>
+		</div>
+		
+		<div class="field">
+			<p><%= t('illustration.image')%><br />
+				<%= f.file_field :image %>
+			</p>
+		</div>
+		
+		<div class="actions">
+		  <%= f.submit t('admin.save') %>
+		</div>
+	<% end %>
+</div>
+
+
+<script type="text/javascript">// <![CDATA[
+  $(document).ready(function() {
+    uploadify_form('#upload_form');
+  });
+// ]]></script>
+

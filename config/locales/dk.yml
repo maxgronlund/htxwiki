@@ -270,6 +270,7 @@ dk:
         pages: "tekster"
         are_you_sure: 'Er du sikker?'
         created_at: 'oprettet'
+        cases: 'cases'
     blog:
         posts: 'Indlæg'
         new: 'Nyt indlæg'

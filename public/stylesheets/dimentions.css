@@ -66,6 +66,10 @@
 	min-height:32px;
 }
 
+.height_168{
+	min-height:168px;
+}
+
 .round_corners {
 	-moz-border-radius: 5px;
 	border-radius: 5px;

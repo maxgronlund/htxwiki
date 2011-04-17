@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110110171914) do
+ActiveRecord::Schema.define(:version => 20110417203734) do
 
   create_table "blogs", :force => true do |t|
     t.string   "title"
@@ -19,6 +19,30 @@ ActiveRecord::Schema.define(:version => 20110110171914) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "language"
+  end
+
+  create_table "cases", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "casestorries", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "category"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "comments", :force => true do |t|

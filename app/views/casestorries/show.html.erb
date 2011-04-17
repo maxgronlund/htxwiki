@@ -1,0 +1,25 @@
+<div class='grid_12'>
+
+<p id="notice"><%= notice %></p>
+
+	<%= image_tag @casestorry.image.url() %><br/>
+<p>
+  <b>Title:</b>
+  <%= @casestorry.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @casestorry.body %>ss
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @casestorry.category %>
+</p>
+
+
+<%= link_to 'Edit', edit_casestorry_path(@casestorry) %> |
+<%= link_to 'Back', casestorries_path %>
+
+</div>

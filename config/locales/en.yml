@@ -53,6 +53,7 @@ en:
         pages: "texts"
         are_you_sure: 'Are you sure?'
         created_at: 'created'
+        cases: 'cases'
     blog:
         posts: 'Posts'
         new: 'New post'
