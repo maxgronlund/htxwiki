@@ -1,0 +1,23 @@
+<div class="grid_12">
+	
+	<%if @logo != nil%>
+		<%= image_tag @logo.image.url() %>
+	<%end%>
+	
+
+	<h1><%=raw @welcome.title%></h1>
+	
+	
+	<div class="grid_4 suffix_8 alpha omega">
+		<%=raw @welcome.body%>
+	</div>
+	
+	<% if can?(:edit, @welcome)%>
+		<div class="grid_4 suffix_8 alpha omega text_right">
+			<hr/>
+			<%= link_to t('admin.edit'), edit_page_path(@welcome)%>
+		</div>
+	<%end%>
+
+	
+</div>

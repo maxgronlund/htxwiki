@@ -1,0 +1,27 @@
+<%if user_signed_in? && current_user.admin_or_super?%>
+	<div class="grid_12">
+		<h1><%= t('admin.administration')%></h1>
+	</div>
+	
+	
+	<div class="grid_12">
+	
+		
+		<div class="top_margin_6">
+			<%= link_to t('admin.users'), users_path %>
+		</div>
+		
+		<div class="top_margin_6">
+			<%= link_to t('admin.illustrations'), illustrations_path %>
+		</div>
+		
+		<div class="top_margin_6">
+			<%= link_to t('admin.pages'), pages_path %>
+		</div>
+	
+	
+	</div>
+<%else%>
+	<%= render :partial => "shared/no_access" %>
+<%end%>
+
