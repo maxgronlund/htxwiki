@@ -21,7 +21,11 @@ set :use_sudo, false
 
 # repo details
 set :scm , :git
+<<<<<<< HEAD
 set :repository, "git@github.com:maxgronlund/htxwiki.git"  # <<< change reposotory
+=======
+set :repository, "git@github.com:maxgronlund/rails-htxwiki.git"  # <<< change reposotory
+>>>>>>> e7c177350c343cb1ae24c5feccf490b9601d8cb6
 set :branch, "master"
 set :git_enable_submodules, 1
 
