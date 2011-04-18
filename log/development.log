@@ -3672,3 +3672,164 @@ Rendered shared/_topbanner.erb (0.2ms)
 Rendered shared/_footer.html.erb (0.2ms)
 Rendered casestorries/index.html.erb within layouts/application (20.1ms)
 Completed 200 OK in 70ms (Views: 27.0ms | ActiveRecord: 0.9ms | Sphinx: 0.0ms)
+
+
+Started GET "/users/sign_in?locale=dk" for 127.0.0.1 at 2011-04-19 01:54:07 +0200
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"dk"}
+Rendered devise/shared/_links.erb (0.9ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___4605159336143159463_2236607340__996802877838862811 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (2.4ms)
+Rendered shared/_topbanner.erb (0.2ms)
+Rendered shared/_footer.html.erb (0.2ms)
+Rendered devise/sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 82ms (Views: 15.9ms | ActiveRecord: 0.0ms | Sphinx: 0.0ms)
+
+
+Started POST "/users/sign_in?locale=dk" for 127.0.0.1 at 2011-04-19 01:54:16 +0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qmzuipYA/5ZCPqHRD0fe6S7KURqHk2SWl3S5VcZAjC0=", "user"=>{"email"=>"max@synthmax.dk", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login", "locale"=>"dk"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`email` = 'max@synthmax.dk') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2011-04-18 23:54:16', `sign_in_count` = 2, `updated_at` = '2011-04-18 23:54:16' WHERE (`users`.`id` = 1)[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (13.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/?locale=dk
+Completed 302 Found in 110ms
+
+
+Started GET "/?locale=dk" for 127.0.0.1 at 2011-04-19 01:54:16 +0200
+  Processing by HomeController#index as HTML
+  Parameters: {"locale"=>"dk"}
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mIllustration Load (0.6ms)[0m  SELECT `illustrations`.* FROM `illustrations` WHERE (`illustrations`.`title` = 'logo') LIMIT 1
+  [1m[36mPage Load (0.7ms)[0m  [1mSELECT `pages`.* FROM `pages` WHERE (`pages`.`identity` = 'welcome_dk ') LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___4605159336143159463_2155710600__996802877838862811 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (2.8ms)
+Rendered shared/_topbanner.erb (0.2ms)
+Rendered shared/_footer.html.erb (0.2ms)
+Rendered home/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 91ms (Views: 25.3ms | ActiveRecord: 2.6ms | Sphinx: 0.0ms)
+
+
+Started GET "/images/fallback/default_illustration_original.gif" for 127.0.0.1 at 2011-04-19 01:54:16 +0200
+
+ActionController::RoutingError (No route matches "/images/fallback/default_illustration_original.gif"):
+  
+
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/images/fallback/default_illustration_original.gif" for 127.0.0.1 at 2011-04-19 01:54:16 +0200
+
+ActionController::RoutingError (No route matches "/images/fallback/default_illustration_original.gif"):
+  
+
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/dk/admin" for 127.0.0.1 at 2011-04-19 01:54:18 +0200
+  Processing by AdminController#index as HTML
+  Parameters: {"locale"=>"dk"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___4605159336143159463_2172059000__996802877838862811 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (2.8ms)
+Rendered shared/_footer.html.erb (0.2ms)
+Rendered admin/index.html.erb within layouts/admin (7.5ms)
+Completed 200 OK in 39ms (Views: 10.1ms | ActiveRecord: 1.1ms | Sphinx: 0.0ms)
+
+
+Started GET "/dk/users" for 127.0.0.1 at 2011-04-19 01:54:19 +0200
+  Processing by UsersController#index as HTML
+  Parameters: {"locale"=>"dk"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT `users`.* FROM `users` ORDER BY name asc LIMIT 30 OFFSET 0
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___4605159336143159463_2159923660__996802877838862811 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (3.3ms)
+Rendered shared/_topbanner.erb (0.2ms)
+Rendered shared/_footer.html.erb (0.2ms)
+Rendered users/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 42ms (Views: 17.9ms | ActiveRecord: 2.2ms | Sphinx: 0.0ms)
+
+
+Started GET "/dk/users/new" for 127.0.0.1 at 2011-04-19 01:54:20 +0200
+  Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"dk"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___4605159336143159463_2236009620__996802877838862811 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (2.9ms)
+Rendered shared/_topbanner.erb (0.2ms)
+Rendered shared/_footer.html.erb (0.2ms)
+Rendered users/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 40ms (Views: 17.3ms | ActiveRecord: 16.4ms | Sphinx: 0.0ms)
+
+
+Started POST "/dk/users" for 127.0.0.1 at 2011-04-19 01:54:43 +0200
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qmzuipYA/5ZCPqHRD0fe6S7KURqHk2SWl3S5VcZAjC0=", "user"=>{"name"=>"Maria", "email"=>"maria@synthmax.dk", "image"=>"", "role"=>"admin", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Opret konto", "locale"=>"dk"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('maria@synthmax.dk')) LIMIT 1
+  [1m[36mSQL (2.8ms)[0m  [1mdescribe `users`[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `password_salt`, `reset_password_token`, `remember_token`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`, `role`, `name`, `image_file_name`, `image_content_type`, `image_file_size`, `image_updated_at`, `language`) VALUES ('maria@synthmax.dk', '$2a$10$CVuPa2Y268TiEWzPhkipz.DrDmQWTnVrGxhiv56fVbEdG5f7Hsud.', '$2a$10$CVuPa2Y268TiEWzPhkipz.', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2011-04-18 23:54:44', '2011-04-18 23:54:44', 'admin', 'Maria', NULL, NULL, NULL, NULL, NULL)
+[paperclip] Saving attachments.
+  [1m[36mSQL (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.`id` FROM `users` WHERE (LOWER(`users`.`email`) = LOWER('maria@synthmax.dk')) AND (`users`.id <> 2) LIMIT 1[0m
+[paperclip] Saving attachments.
+  [1m[35mSQL (0.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/dk/users/2
+Completed 302 Found in 203ms
+
+
+Started GET "/dk/users/2" for 127.0.0.1 at 2011-04-19 01:54:44 +0200
+  Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"dk", "id"=>"2"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___4605159336143159463_2170304160__996802877838862811 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (3.2ms)
+Rendered shared/_topbanner.erb (0.2ms)
+Rendered shared/_footer.html.erb (0.2ms)
+Rendered users/show.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 41ms (Views: 16.9ms | ActiveRecord: 2.4ms | Sphinx: 0.0ms)
+
+
+Started GET "/dk/users/2/edit" for 127.0.0.1 at 2011-04-19 01:54:45 +0200
+  Processing by UsersController#edit as HTML
+  Parameters: {"locale"=>"dk", "id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT `users`.* FROM `users` LIMIT 1[0m
+Rendered users/edit.html.erb within layouts/application (1172.2ms)
+Completed   in 1243ms
+
+ActionView::Template::Error (undefined local variable or method `current_usercurrent_user' for #<#<Class:0x0000010a9b0608>:0x0000010a991528>):
+    38: 		</div>
+    39: 		
+    40: 		<% unless @user.id == User.first.id %>
+    41: 			<% if current_user && current_usercurrent_user.admin_or_super?  %>
+    42: 				<% if current_user.super?  %>
+    43: 				  Rolle: <%= f.select(:role, User::ROLES)%><br/>
+    44: 				<%else%>
+  app/views/users/edit.html.erb:41:in `block in _app_views_users_edit_html_erb__2175817118680686677_2236383360__761511983926657996'
+  app/views/users/edit.html.erb:4:in `_app_views_users_edit_html_erb__2175817118680686677_2236383360__761511983926657996'
+  app/middleware/flash_session_cookie_middleware.rb:16:in `call'
+
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (578.5ms)
+Rendered /Users/synthmax/.rvm/gems/ruby-1.9.2-rc2@gopublish/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (627.6ms)
+
+
+Started GET "/dk/users/2/edit" for 127.0.0.1 at 2011-04-19 01:56:24 +0200
+  Processing by UsersController#edit as HTML
+  Parameters: {"locale"=>"dk", "id"=>"2"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` = 1) LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` = 2) LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT `users`.* FROM `users` LIMIT 1
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__navigation_html_erb___4605159336143159463_2182028960__996802877838862811 at /Users/synthmax/Dropbox/htxwiki/app/views/shared/_navigation.html.erb:42)
+Rendered shared/_navigation.html.erb (2.8ms)
+Rendered shared/_topbanner.erb (0.2ms)
+Rendered shared/_footer.html.erb (0.3ms)
+Rendered users/edit.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 43ms (Views: 18.1ms | ActiveRecord: 2.7ms | Sphinx: 0.0ms)
