@@ -448,17 +448,6 @@
 	background-image:url('../images/background_grid.png');
 }
 
-a .image_fix{ 
-	background-color:transparent; 
-	margin:0px 0px -3px 0px;
-}
-
-a:hover .image_fix{ 
-	background-color:#e1e0e0; 
-	margin:0px 0px -3px 0px;
-}
-
-
 pre {
   background-color: #eee;
   padding: 10px;

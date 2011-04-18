@@ -8,6 +8,7 @@ class Ability
       elsif user.admin?
         can :manage, Blog
         can :manage, Comment
+        can :manage, Casestorry
         can :manage, Illustration
         can :manage, Page
         can :manage, User
@@ -18,6 +19,7 @@ class Ability
         can :read, Blog
         can :create, Blog
         can :manage, Blog, :user_id => user.id
+        can :read, Casestorry
         can :create, Comment
         can :manage, Comment, :user_id => user.id  
         can :read, Illustration
@@ -29,6 +31,7 @@ class Ability
     # When not logged in
    else
      can :read, Blog
+     can :read, Casestorry
      can :read, Comment
      can :read, Illustration
      can :read, Page

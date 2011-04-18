@@ -1,6 +1,6 @@
 body {
-	font: 12px Times Arial, Helvetica, sans-serif;
-	color:#444;
+	font: 11px Times Arial, Helvetica, sans-serif;
+	color:#666;
 	margin-top:0px;
 
 }
@@ -28,7 +28,9 @@ a:hover {
 	background-color:#333; 
 }
 
-
+strong{
+	color:#444;
+}
 
 
 p{
@@ -157,6 +159,8 @@ fieldset {
 .text_left{
 	text-align:left;
 }
+
+
 
 
 
