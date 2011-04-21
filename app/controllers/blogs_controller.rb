@@ -13,6 +13,7 @@ class BlogsController < InheritedResources::Base
   def new
     @blog = Blog.new
     @user = current_user
+    @blog.language = 'en'
 
     respond_to do |format|
       format.html # new.html.erb

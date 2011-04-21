@@ -24,7 +24,8 @@
 	
 	<div class="field">
 		<%#= t('user.language')%><br/>
-		<%#= f.select(:language, User::LANGUAGE)%><br/>
+		<%#= f.select(:language, User::LANGUAGE)%>
+		<%= f.hidden_field(:language)%>
 	</div>
 	  
 	  <div class="actions">
