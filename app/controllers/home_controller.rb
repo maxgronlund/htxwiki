@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 #    @logo = Illustration.logo
     
 
-   @casestorries = Casestorry.limit(3).order('created_at DESC')
+   @casestorries = Casestorry.limit(6).order('created_at DESC')
    @blogs = Blog.limit(6).order('created_at DESC')
 
     
