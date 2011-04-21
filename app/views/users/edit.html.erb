@@ -26,8 +26,8 @@
 		</div>
 	
 		<div class="field">
-		  <%= t('user.language') %><br />
-		  ç
+		  <%#= t('user.language') %><br />
+		  <%= f.select(:language, User::LANGUAGE)%>
 		</div>
 
 		

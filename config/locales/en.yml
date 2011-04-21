@@ -87,6 +87,8 @@ en:
         identification: 'identifikation !DO NOT EDIT'
         edit_page: 'Edit text'
         new_page: 'New text'
-        new: 'new tekst'
+        new: 'new text'
         text:  'Text'
         all_pages: 'all text'
+    tutorial:
+        type: 'type'

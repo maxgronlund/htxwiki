@@ -6,12 +6,14 @@ class ApplicationController < ActionController::Base
  
  
  def set_locale
-     if user_signed_in?
-       I18n.locale = session[:locale] || current_user.language
-     else
-       #I18n.locale = 'dk'
-       I18n.locale = session[:locale] || 'en'
-     end
+   I18n.locale = 'en'
+   I18n.locale = session[:locale] || 'en'
+  #   if user_signed_in?
+  #     I18n.locale = session[:locale] || current_user.language
+  #   else
+  #     #I18n.locale = 'dk'
+  #     I18n.locale = session[:locale] || 'en'
+  #   end
  end
  
  def default_url_options(options={})

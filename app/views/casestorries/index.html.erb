@@ -1,6 +1,6 @@
 <div class='grid_12'>
 
-	<h1>Listing casestorries</h1>
+	<h1>Case Storries</h1>
 	
 	
 	<% @casestorries.each_with_index do |casestorry, index| %>
@@ -26,9 +26,10 @@
 						:class => 'image_fix' %>
 								
 			<%#= link_to image_tag casestorry.image.url(:thumbnail) %>
-			<div class='grid_3 alpha omega top_margin_16'>
-				<b><%= casestorry.title %></b><br>
-				<%= casestorry.body %>
+			
+			<div class='grid_3 alpha omega top_margin_16 height_56'>
+				<b><%= link_to casestorry.title, casestorry %></b><br>
+				<%= link_to excerpt( casestorry.body, '', :radius => 100), casestorry %>
 			</div>
 			<div class='grid_3 alpha omega top_margin_8'>
 				<%= casestorry.category %>

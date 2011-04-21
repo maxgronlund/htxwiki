@@ -307,5 +307,7 @@ dk:
         new: 'ny tekst'
         text: 'Tekster'
         all_pages: 'alle tekster'
+    tutorial:
+        type: 'type'
         
     

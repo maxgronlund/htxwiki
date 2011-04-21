@@ -7,8 +7,9 @@ class Blog < ActiveRecord::Base
   validates_presence_of :body
 #  belongs_to :commentable, :polymorphic => true
 
-scope :language, where(:language => I18n.locale.to_s)
+#scope :language, where(:language => I18n.locale.to_s)
 # scope :language, where(:language => I18n.locale.to_s)
+scope :language, lambda { where(:language => I18n.locale.to_s) }
   
   define_index do
     indexes :title

@@ -1,6 +1,7 @@
 class CasestorriesController < InheritedResources::Base
     load_and_authorize_resource
     respond_to :js, :only => [:create, :update]
+    uses_tiny_mce :only => [:new, :create, :edit, :update]
     
 #    helper_method :sort_column, :sort_direction 
 

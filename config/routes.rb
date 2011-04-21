@@ -4,6 +4,7 @@ Rails_template::Application.routes.draw do
 
 
 
+
   resources :gibbon_campaigns, :only => :index
 
   resources :gibbon_lists, :only => :index do
@@ -11,7 +12,7 @@ Rails_template::Application.routes.draw do
   end
 
   scope "/:locale" do
-    resources :casestorries,:comments, :blogs,:home,:illustrations,:pages, :users
+    resources :casestorries,:comments, :blogs,:home,:illustrations,:pages, :users, :tutorials,:tutorial_posts
   end
 
   
@@ -34,6 +35,10 @@ Rails_template::Application.routes.draw do
   
   resources :blogs do
     resources :comments
+  end
+  
+  resources :tutorials do
+    resource :tutorial_posts
   end
   
   

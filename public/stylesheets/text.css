@@ -7,15 +7,15 @@ body {
 
 
 a{
-/*	text-decoration:underline;
-	text-decoration:none; */
+/*	text-decoration:underline;*/
+	text-decoration:none; 
 	color:#444;
 /*	background:#e8e8e8;*/
 }
 
 a:focus {
 	outline: 0px none;
-	color:#000;
+	color:#00cf00;
 
 }
 
@@ -24,8 +24,8 @@ a:visited {
 }
 
 a:hover { 
-	color: #ddd; 
-	background-color:#333; 
+	color: #00cf00; 
+/*	background-color:#333; */
 }
 
 strong{
@@ -34,7 +34,7 @@ strong{
 
 
 p{
-	font: 12px Times Arial, Helvetica, sans-serif;
+	font: 11px Times Arial, Helvetica, sans-serif;
 	color:#444;
 }
 

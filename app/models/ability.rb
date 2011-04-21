@@ -11,6 +11,7 @@ class Ability
         can :manage, Casestorry
         can :manage, Illustration
         can :manage, Page
+        can :manage, Tutorial
         can :manage, User
         
         
@@ -24,6 +25,7 @@ class Ability
         can :manage, Comment, :user_id => user.id  
         can :read, Illustration
         can :read, Page
+        can :read, Tutorial
         can :read, User
         can :manage, User, :id => user.id
        
@@ -35,6 +37,7 @@ class Ability
      can :read, Comment
      can :read, Illustration
      can :read, Page
+     can :read, Tutorial
      can :read, User
      #can :create, User# <----------- Uncomment this to alow users to signup by them self 
     end

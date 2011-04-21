@@ -2,7 +2,7 @@
 class Page < ActiveRecord::Base
   
 
-  scope :language, where(:language => I18n.locale.to_s)
+  scope :language, lambda { where(:language => I18n.locale.to_s) }
   
   def self.with_identity(identity)
     where(:identity => identity).first
